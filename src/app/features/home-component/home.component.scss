@@ -42,35 +42,30 @@
 }
 
 .home-calc-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding: 15px;
-  // display: flex;
-  flex-wrap: wrap;
+  padding-top: 15px;
+  flex-wrap: nowrap;
 
-  div {
+  .calc-card {
+    padding: 15px;
+    width: 100%;
     overflow: hidden;
-    height: 20vh;
     background-color: white;
     border-radius: 5px;    
     margin-bottom: 15px;
-    &:not(:last-child) {
-      margin-right: 15px;
-    }
 
     .card-container {
-      position: relative;
       .icon {
-        position: absolute;
-        right: 10px;
-        top: 10px;
+        display: flex;
+        justify-content: end;
         font-size: 60px;
       }
       .total {
-        height: fit-content;
         font-weight: bold;
-        position: absolute;
-        bottom: 5px;
         p {
           line-height: 25px;
         }
@@ -86,8 +81,21 @@
   }
 }
 
+@media (min-width: 768px) {
+  .home-calc-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    .calc-card {
+      width: 45%;     
+    }
+  }
+}
+
 @media (min-width: 992px) {
   .home-calc-cards {
     flex-wrap: nowrap;
+    .calc-card {
+      width: 24%;
+    }
   }
 }
