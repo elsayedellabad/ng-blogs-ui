@@ -1,10 +1,9 @@
 .container-fluid {
   margin: 10px;
-  // background-color: #F0F5FB;
   .home-card {
     padding-bottom: 10px;
     .mat-mdc-card-title {
-      color: var(--primary-color);
+      color: var(--text-color);
       padding-bottom: 5px;
     }
     .mat-mdc-card-content {

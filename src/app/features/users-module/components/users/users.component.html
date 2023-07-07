@@ -29,7 +29,7 @@
       </div>     
   </div>
   
-  <div class="col-12 text-center no-search-results" *ngIf="usersData && usersData.length==0">
-     No users found, Please try again later.
+  <div class="col-12 text-center no-search-results" *ngIf="usersData && usersData.length==0 && !loading">
+     No Users yet, Please try again later!.
   </div>
 </div>

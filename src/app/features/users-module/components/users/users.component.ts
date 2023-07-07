@@ -14,6 +14,7 @@ import {
 export class UsersComponent implements OnInit {
   usersData: UserItem[] = [];
   listView: boolean = false;
+  loading: boolean = false;
   constructor(private usersService: UsersService) {}
 
   ngOnInit(): void {
@@ -25,11 +26,14 @@ export class UsersComponent implements OnInit {
    *
    */
   public getUsersData() {
+    this.loading = true;
     this.usersService.getUsers().subscribe({
       next: (results: UserItem[]) => {
+        this.loading = false;
         this.usersData = results;
       },
       error: (e) => {
+        this.loading = false;
         console.log(e.error['message']);
       },
     });

@@ -19,8 +19,8 @@
       </div>
     </div>
 
-    <div class="col-12 text-center no-search-results" *ngIf="blogsData && blogsData.length==0">
-      No Blogs yet!.
+    <div class="col-12 text-center no-search-results" *ngIf="blogsData && blogsData.length==0 && !loading">
+      No Blogs yet, Please try again later!.
     </div>
   </div>
 </div>

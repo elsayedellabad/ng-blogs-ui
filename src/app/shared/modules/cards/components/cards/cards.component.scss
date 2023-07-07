@@ -17,6 +17,9 @@
     }
 
     .content {
+      .title{
+        color: black;
+      }
       .desc {
         color: var(--text-color);
         font-size: 12px;
@@ -27,6 +30,7 @@
       }
 
       .date-author {
+        color: black;
         margin-top: 15px;
         .date {
           margin-right: 30px;

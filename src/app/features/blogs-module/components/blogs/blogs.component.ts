@@ -10,7 +10,7 @@ import { emptyCardData } from 'src/app/shared';
 })
 export class BlogsComponent implements OnInit {
   blogsData: BlogItem[] = [];
-
+  loading: boolean = false;
   constructor(private blogsService: BlogsService) {}
 
   ngOnInit(): void {
@@ -22,11 +22,14 @@ export class BlogsComponent implements OnInit {
    *
    */
   public getAllBlogs() {
+    this.loading = true;
     this.blogsService.getBlogs().subscribe({
       next: (result: BlogItem[]) => {
+        this.loading = false;
         this.blogsData = result;
       },
       error: (e: any) => {
+        this.loading = false;
         console.log(e.error['message']);
       },
     });
