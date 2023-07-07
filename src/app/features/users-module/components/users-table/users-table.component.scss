@@ -77,6 +77,21 @@ table {
     text-align: center;
   }
 
+  .mat-mdc-cell {
+    .img {
+      width: 50px;
+      height: 50px;
+      margin-left: 5%;
+      float: left;
+    }
+    .name { 
+      display: inline-block;
+      padding-top: 10px;
+    }
+  }
+  .mat-mdc-row{
+    height: 70px;
+  }
   .mat-mdc-row:nth-child(odd) {
     background-color: var(--bg-color);
   }
@@ -178,4 +193,12 @@ td.mat-cell {
 
 .paginator {
   height: 45px;
+}
+
+@media (min-width: 992) {
+  .mat-mdc-cell {
+    .img {
+      margin-left: 20%;
+    }
+  }
 }
