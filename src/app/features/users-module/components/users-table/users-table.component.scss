@@ -1,13 +1,11 @@
 .users-list {
   background-color: var(--white-bg);
   margin-top: 20px;
-  min-height: 80vh;
+  min-height: 45vh;
 
   .search-box {
-    // border: 1px solid greenyellow;
     position: relative;
     input {
-      // width: 30%;
       padding: 6px;
       margin-left: 20px;
       padding-left: 30px;
@@ -19,9 +17,10 @@
 
     .icon {
       position: absolute;
-      right: 13%;
+      right: 11%;
       bottom: -40px;
       width: 10px;
+      color: black;
     }
     .material-icons {
       color: red;
@@ -35,13 +34,12 @@
   }
 }
 
-
 table {
   width: 100%;
   margin-top: 25px;
   box-shadow: none;
 
-  thead{    
+  thead {
     margin-top: 20px;
   }
 
@@ -56,35 +54,38 @@ table {
     border: 1px solid #eee;
   }
 
-  tr.event-detail-row {
-    height: 0;
-  }
-
-  .collapsed .event-detail {
-    overflow: hidden;
-  }
-
-  .mat-row:not(.event-detail-row) {
-    background-color: var(--odd-table-row);
-  }
-
-  tr.mat-header-row {
+  .mat-mdc-header-row {
     background-color: var(--table-header);
     height: 40px;
 
-    th {
+    .mat-mdc-header-cell {
       color: var(--dark-text);
       font-weight: bold;
+      font-size: 16px;
       font-size: 14px;
+      // padding-left: 50px;
+      text-align: center;
     }
   }
 
-  .mat-cell,
-  .mat-footer-cell {
+  .mat-mdc-cell,
+  .mat-mdc-footer-cell {
     color: #717889;
     font-size: 14px;
-    border-bottom-color: var(--border);
+    // border-bottom-color: var(--border);
     word-break: break-all;
+    text-align: center;
+  }
+
+  .mat-mdc-row:nth-child(odd) {
+    background-color: var(--bg-color);
+  }
+
+  .mat-mdc-row {
+    .mat-mdc-cell:first-child {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
   }
 }
 
