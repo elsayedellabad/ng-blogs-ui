@@ -18,23 +18,14 @@
       margin-right: 10px;
       input
         {
-        // padding: 6px;
-        // margin-left: 20px;
-        // padding-left: 30px;
         outline: none;
         color: var(--text-color);
         font-size: 13px;
         border: 0px;
-        // margin-top: 10px;
-        // float: right;
       }
   
       .icon {
-        // position: absolute;
-        // right: 11%;
-        // bottom: -40px;
         font-size: 25px;
-        // width: 10px;
         color: black;
       }
     }
@@ -43,8 +34,6 @@
       color: red;
       cursor: pointer;
       position: absolute;
-      // left: 29%;
-      // top: 7px;
       right: 0%;
       top: 14px;
     }
@@ -80,7 +69,6 @@ table {
       font-weight: bold;
       font-size: 16px;
       font-size: 14px;
-      // padding-left: 50px;
       text-align: center;
     }
   }
@@ -89,7 +77,6 @@ table {
   .mat-mdc-footer-cell {
     color: #717889;
     font-size: 14px;
-    // border-bottom-color: var(--border);
     word-break: break-all;
     text-align: center;
   }
