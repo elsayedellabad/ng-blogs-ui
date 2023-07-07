@@ -1,0 +1,23 @@
+<mat-card class="nyt-user-card">
+  <div class="container">
+    <div class="image">
+      <img
+        mat-card-image
+        src="{{ userCardItem.imageUrl ? userCardItem.imageUrl : '' }}"
+        height="204px"
+      />
+    </div>
+    <div class="content">
+      <h6 class="name">
+        {{
+          userCardItem.name
+        }}
+      </h6>
+      <p class="company">
+        {{
+          userCardItem.company
+        }}
+      </p>
+    </div>
+  </div>
+</mat-card>

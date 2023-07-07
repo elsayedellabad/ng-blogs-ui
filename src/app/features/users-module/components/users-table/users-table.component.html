@@ -1,0 +1,100 @@
+<div class="users-list">
+  <div class="search-box" *ngIf="usersTableData">
+    <input
+      type="text"
+      placeholder="Search Entry"
+      (keyup)="applySearchFilter()"
+      [(ngModel)]="filterUsers"
+    />
+    <span
+      *ngIf="filterUsers"
+      (click)="filterUsers = ''; applySearchFilter()"
+      class="material-icons"
+    >
+      clear
+    </span>
+    <span class="material-symbols-rounded icon">
+      search
+      </span>
+    <!-- <span class="icon" matSuffix><img src="" /></span> -->
+  </div>
+  
+  <table
+    *ngIf="usersTableData"
+    mat-table
+    matSort
+    [dataSource]="dataSource"
+    multiTemplateDataRows
+  >
+    <!-- Name Column -->
+    <ng-container matColumnDef="Name">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        style="width: 20%"
+        mat-sort-header="name"
+      >
+        Name
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{element?.name}}
+      </td>
+    </ng-container>
+
+    <!-- Designation Column -->
+    <ng-container matColumnDef="Designation">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        style="width: 30%"
+        mat-sort-header="Designation"
+      >
+        Designation
+      </th>
+      <td mat-cell *matCellDef="let element">{{element?.username}}</td>
+    </ng-container>
+
+    <!-- JoiningDate Column -->
+    <ng-container matColumnDef="JoiningDate">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        style="width: 30%"
+        mat-sort-header="Designation"
+      >
+        Joining Date
+      </th>
+      <td mat-cell *matCellDef="let element">12 July 2020</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <div *ngIf="usersTableError || usersTableData?.length === 0" class="no-data">
+    <span *ngIf="usersTableData?.length === 0">
+      {{ noDataMessage }}
+    </span>
+    <span *ngIf="usersTableError"> {{ usersTableErrorMessage }} </span>
+  </div>
+  <div
+    *ngIf="dataSource?.data?.length === 0 && usersTableData?.length !== 0"
+    class="no-data"
+  >
+    <span>
+      No data found for your search. Please try with again other values.
+    </span>
+  </div>
+
+  <!-- Pagination-->
+  <mat-paginator
+    #paginator
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    [pageIndex]="pageIndex"
+    [showFirstLastButtons]="true"
+    aria-label="Select page"
+    (page)="getUsersDataPaginated($event)"
+  >
+  </mat-paginator>
+</div>

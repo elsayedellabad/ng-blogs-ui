@@ -1,0 +1,40 @@
+<mat-card class="nyt-card">
+  <div class="container">
+    <div class="image">
+      <img
+        mat-card-image
+        src="{{ cardItem.imageUrl ? cardItem.imageUrl : '' }}"
+        height="204px"
+      />
+    </div>
+    <div class="content">
+      <h3 class="title">
+        {{
+          cardItem.title.length > 40
+            ? (cardItem.title | slice : 0 : 40) + ".."
+            : cardItem.title
+        }}
+      </h3>
+      <p class="desc">
+        {{
+          cardItem.description.length > 110
+            ? (cardItem.description | slice : 0 : 300) + ".."
+            : cardItem.description
+        }}
+      </p>
+      <a class="link" href="{{ cardItem.id }}" onclick="return false;"
+        >Read More</a
+      >
+      <p class="date-author">
+        <span class="date">
+          <span class="material-symbols-rounded icon"> pace </span>
+          <span >{{ cardItem.created_date | date : "dd MMMM YYYY" }}</span>
+        </span>
+        <span class="author">
+          <span class="material-symbols-rounded icon"> account_circle </span
+          >{{ cardItem.author }}</span
+        >
+      </p>
+    </div>
+  </div>
+</mat-card>

@@ -1,0 +1,48 @@
+.nyt-user-card {
+  min-height: 25vh;
+  max-height: 25vh;
+  padding: 20px;
+  margin-bottom: 100px;
+  
+  .container {
+    height: fit-content;
+    text-align: center;
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0px;
+    .image {
+     position: relative;
+      img {
+        position: absolute;
+        bottom: 45px;
+        left: 120px;
+        height: fit-content;
+      }
+    }
+
+    .content {
+      margin-top: 100px;
+      width: 100%;
+      .name {
+        color: var(--primary-color );
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .company{
+        font-size: 12px;
+      }  
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    .image {
+      img {
+        left: 15px !important;
+      }
+    }
+  }
+}

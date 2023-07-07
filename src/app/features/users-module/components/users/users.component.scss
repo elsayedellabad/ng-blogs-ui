@@ -1,0 +1,57 @@
+.container-fluid {
+  margin: 10px;
+  
+  .home-card {
+    padding-bottom: 10px;
+
+    .mat-mdc-card-title {
+      color: var(--primary-color);
+      padding-bottom: 5px;
+    }
+
+    .mat-mdc-card-content {
+      color: var(--text-color);
+      font-size: 12px;
+      background-color: var(--bg-color);
+      padding: 10px;
+      padding-left: 30px;
+    }
+  }
+
+  .home-card {
+    mat-card-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .actions {
+        padding: 2px;
+        border: 2px solid var(--bg-color);
+        border-radius: 5px;
+        margin-bottom: 5px;
+
+        span {
+          color: black;
+        }
+
+        span.active {
+          color: var(--primary-color);
+        }
+
+        span:hover {
+          cursor: pointer;
+        }
+
+        span:first-child {
+          height: fit-content;
+          margin-right: 10px;
+          border-right: 2px solid var(--bg-color);
+        }
+      }
+    }
+  }
+
+  .users-cards {
+    margin-top: 70px;
+  }
+}

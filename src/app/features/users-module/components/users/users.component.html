@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <mat-card class="home-card">
+        <mat-card-header>
+          <mat-card-title> <span class="material-symbols-rounded icon">dashboard</span> Users</mat-card-title>
+          <div class="actions">
+            <span class="material-symbols-rounded" (click)="viewType('grid')" [ngClass]="listView ? 'active' : ''">view_list</span>
+            <span class="material-symbols-rounded" (click)="viewType('list')" [ngClass]="!listView ? 'active' : ''">grid_view</span>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Total Users: {{usersData.length}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div class="col-12 users-cards" [hidden]="listView" *ngIf="usersData && usersData.length > 0">
+    <div class="row">
+      <div *ngFor="let user of usersData" class="col-12 col-md-4 col-xl-2">
+        <app-user-card [userCardItem]="formatCardData(user)"></app-user-card>
+      </div>
+    </div>  
+  </div>
+
+  <div class="row" [hidden]="!listView" *ngIf="usersData && usersData.length > 0">
+    <div class="col-12" >     
+        <app-users-table [usersTableData]="usersData"></app-users-table>
+      </div>     
+  </div>
+  
+  <div class="col-12 text-center no-search-results" *ngIf="usersData && usersData.length==0">
+     No users found, Please try again later.
+  </div>
+</div>

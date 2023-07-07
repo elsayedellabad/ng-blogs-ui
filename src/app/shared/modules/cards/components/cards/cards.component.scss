@@ -1,0 +1,42 @@
+.nyt-card {
+  min-height: 40vh;
+  max-height: 45vh;
+  padding: 20px;
+  margin-bottom: 30px;
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .image {
+      margin-right: 20px;
+      img {
+        height: fit-content;
+      }
+    }
+
+    .content {
+      .desc {
+        color: var(--text-color);
+        font-size: 12px;
+      }
+
+      .link {
+        text-decoration: underline;
+      }
+
+      .date-author {
+        margin-top: 15px;
+        .date {
+          margin-right: 30px;
+        }
+        .icon {
+          // display: inline-flex;
+          // vertical-align: text-bottom;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

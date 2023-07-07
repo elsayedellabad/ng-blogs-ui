@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      
+      <!-- Header -->
+      <header>
+        <app-header></app-header>
+      </header>
+
+      <!-- SideNav and Content -->
+      <mat-sidenav-container class="main-container side-nav">
+        <mat-sidenav mode="side" opened class="w-15">
+          <div class="title">MENU</div>
+          <mat-nav-list>
+            <a
+              *ngFor="let route of routes"
+              mat-list-item
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [routerLink]="route.path"
+            >
+              <span class="text">
+                <span class="material-symbols-rounded icon">dashboard</span>
+                {{ route.label }}</span
+              >
+            </a>
+          </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content class="w-85">
+          <main>
+            <router-outlet></router-outlet>
+          </main>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </div>
+  </div>
+</div>
+
+<app-spinner></app-spinner>
