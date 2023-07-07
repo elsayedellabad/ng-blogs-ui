@@ -1,10 +1,13 @@
 <div class="container-fluid">
   <div class="row">
+    <!-- Home Header Card -->
     <div class="col-12">
       <mat-card class="home-card">
-        
-        <mat-card-header>          
-          <mat-card-title> <span class="material-symbols-rounded icon">dashboard</span> Home</mat-card-title>
+        <mat-card-header>
+          <mat-card-title>
+            <span class="material-symbols-rounded icon">dashboard</span>
+            Home</mat-card-title
+          >
         </mat-card-header>
         <mat-card-content>
           <p>Home Page Description.</p>
@@ -12,69 +15,42 @@
       </mat-card>
     </div>
 
+    <!-- Home Statistics Card -->
     <div class="col-12">
       <div class="row home-calc-cards">
-        <div class="col-12 col-md-4 col-lg-3" *ngFor="let item of statisticsCardsData">
-            <div class="container">
-              <span class="material-symbols-rounded icon">{{item?.icon}}</span>
-              <div class="total">
-                <p class="value">{{item?.total}}</p>
-                <p class="title">{{item?.title}}</p>
-              </div>
+        <div
+          class="col-12 col-md-4 col-lg-3"
+          *ngFor="let item of statisticsCardsData"
+        >
+          <div class="container">
+            <span class="material-symbols-rounded icon">{{ item?.icon }}</span>
+            <div class="total">
+              <p class="value">{{ item?.total }}</p>
+              <p class="title">{{ item?.title }}</p>
             </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-12">
+    <!-- Home Recent Blog Card -->
+    <div class="col-12" *ngIf="recentBlogs.length > 0">
       <mat-card class="home-card blogs">
         <mat-card-header>
-          <mat-card-title>Recent Blogs</mat-card-title>
+          <mat-card-title> <span class="material-symbols-rounded icon">dashboard</span> Recent Blogs</mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <div class="col-12">
             <div class="row home-blogs-cards">
-              <div class="col-12 col-md-4 col-xl-2">
+              <div
+                class="col-12 col-md-4 col-xl-2"
+                *ngFor="let recentBlog of recentBlogs"
+              >
                 <img mat-card-image src="assets/manufacturer.png" alt="" />
                 <div>
-                  <h6 class="title">Lorem ipsum dolor sit amet</h6>
+                  <h6>{{ recentBlog?.title }}</h6>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Maxime mollitia, molestiae quas vel sint commodi repudiandae
-                    consequuntur.
-                  </p>
-                </div>
-              </div>
-              <div class="col-12 col-md-4 col-xl-2">
-                <img mat-card-image src="assets/manufacturer.png" alt="" />
-                <div>
-                  <h6>Lorem ipsum dolor sit amet</h6>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Maxime mollitia, molestiae quas vel sint commodi repudiandae
-                    consequuntur.
-                  </p>
-                </div>
-              </div>
-              <div class="col-12 col-md-4 col-xl-2">
-                <img mat-card-image src="assets/manufacturer.png" alt="" />
-                <div>
-                  <h6>Lorem ipsum dolor sit amet</h6>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Maxime mollitia, molestiae quas vel sint commodi repudiandae
-                    consequuntur.
-                  </p>
-                </div>
-              </div>
-              <div class="col-12 col-md-4 col-xl-2">
-                <img mat-card-image src="assets/manufacturer.png" alt="" />
-                <div>
-                  <h6>Lorem ipsum dolor sit amet</h6>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Maxime mollitia, molestiae quas vel sint commodi repudiandae
-                    consequuntur.
+                    {{ recentBlog?.description }}
                   </p>
                 </div>
               </div>
@@ -83,5 +59,6 @@
         </mat-card-content>
       </mat-card>
     </div>
+
   </div>
 </div>

@@ -29,4 +29,23 @@ export class HomeComponent {
     },
 
   ];
+
+  recentBlogs = [
+    {
+      title: 'Lorem ipsum dolor sit amet',
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur.",
+    },
+    {
+      title: 'Lorem ipsum dolor sit amet',
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur.",
+    },
+    {
+      title: 'Lorem ipsum dolor sit amet',
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur.",
+    },
+    {
+      title: 'Lorem ipsum dolor sit amet',
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur.",
+    }
+  ];
 }
