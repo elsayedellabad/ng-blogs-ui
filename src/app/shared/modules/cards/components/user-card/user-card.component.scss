@@ -3,8 +3,8 @@
   max-height: 25vh;
   padding: 20px;
   margin-bottom: 100px;
-  
-  .container {
+  position: relative;
+  .card-container {
     height: fit-content;
     text-align: center;
     display: flex;
@@ -13,17 +13,30 @@
     align-items: center;
     padding-right: 0px;
     .image {
-     position: relative;
       img {
         position: absolute;
-        bottom: 45px;
-        left: 120px;
+        bottom: 60%;
+        left: 25% !important;
         height: fit-content;
+        z-index: 1;
+      }
+    
+    }
+    .icon {
+      cursor: pointer;
+      span {
+        position: absolute;
+        bottom: 55%;
+        left: 55% !important;
+        height: fit-content;
+        z-index: 2;
+        font-size: 30px;
       }
     }
 
+
     .content {
-      margin-top: 100px;
+      margin-top: 80px;
       width: 100%;
       .name {
         color: var(--primary-color );
@@ -39,11 +52,15 @@
 }
 
 @media (min-width: 768px) {
-  .container {
+  .nyt-user-card { 
+    .card-container {
     .image {
       img {
-        left: 15px !important;
+        // bottom: 60%;
+        left: 20% !important;
       }
     }
+  }
+  
   }
 }
