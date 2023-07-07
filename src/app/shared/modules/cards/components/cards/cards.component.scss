@@ -1,24 +1,22 @@
 .nyt-card {
-  min-height: 40vh;
-  max-height: 45vh;
-  padding: 20px;
+  min-height: 60vh;
+  max-height: 60vh;
+  padding: 20px 5px;
   margin-bottom: 30px;
-  
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 
-    .image {
-      margin-right: 20px;
-      img {
-        height: fit-content;
-      }
-    }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+
+    // .image {
+    //   margin-right: 20px;
+    // }
 
     .content {
-      .title{
-        color: black;
+      .title {
+        margin-top: 10px;
+        color: black;       
+          font-size: 14px !important;
       }
       .desc {
         color: var(--text-color);
@@ -36,11 +34,30 @@
           margin-right: 30px;
         }
         .icon {
-          // display: inline-flex;
-          // vertical-align: text-bottom;
           margin-right: 5px;
         }
       }
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .nyt-card {
+    min-height: 45vh;
+    max-height: 45vh;
+    padding: 20px;
+    .card-container {
+      flex-direction: row;
+      justify-content: space-between;
+      .image {
+        margin-right: 20px;
+      }
+      .content {
+        .title {
+          font-size: 28px !important;
+        }
+      }
+    }
+    
   }
 }

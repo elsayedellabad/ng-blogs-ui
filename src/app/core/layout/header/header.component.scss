@@ -4,7 +4,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 15px;
-  background-color: white; 
+  background-color: white;
   font-family: Poppins, sans-serif;
 
   .logo {
@@ -16,45 +16,45 @@
   }
 
   .menu-btns {
-
-    .alert-icon{
+    display: flex;
+    .alert-icon {
       position: relative;
       display: inline-block;
+      padding-top: 10px;
 
       .material-symbols-rounded {
         display: inline-flex;
         vertical-align: text-bottom;
         margin-right: 20px;
-        font-size: 35px;
+        font-size: 25px;
       }
 
-      .count{
-        position: absolute;        
-        left: 20px;
-        bottom: 20px;
+      .count {
+        position: absolute;
+        left: 14px;
+        bottom: 17px;
         width: 10px;
         height: 16px;
         border: 1px solid;
         border-radius: 50%;
         color: white;
         background-color: red;
-        padding-bottom: 21px;
-        padding-right: 15px;
+        padding-bottom: 12px;
+        padding-right: 10px;
         padding-top: 0px;
-        padding-left: 10px;
+        padding-left: 3px;
+        font-size: 10px;
       }
     }
-    
 
     .name {
       border: 1px solid;
       border-radius: 50%;
       color: white;
       background-color: var(--primary-color);
-      padding: 10px;
+      padding: 7px;
     }
   }
-
 }
 
 // @media (min-width: 768px) {
