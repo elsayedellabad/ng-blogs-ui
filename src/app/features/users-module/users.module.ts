@@ -19,6 +19,7 @@ import { CardsModule } from 'src/app/shared';
 import { UsersTableComponent } from './components/users-table/users-table.component';
 import {MatTableModule} from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
+import {MatSortModule} from '@angular/material/sort';
 @NgModule({
   declarations: [
     UsersComponent,
@@ -39,7 +40,8 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     CardsModule,
     MatTableModule,
-    FormsModule
+    FormsModule,
+    MatSortModule
   ]
 })
 export class UsersModule { }
